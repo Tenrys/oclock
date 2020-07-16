@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>O'clock</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+		<style>
+			.columns.is-variable .column {
+				padding-top: var(--columnGap);
+                padding-bottom: var(--columnGap);
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<div class="hero is-primary">
+				<div class="hero-body">
+					<div class="container">
+						<h1 class="title">O'clock</h1>
+					</div>
+				</div>
+			</div>
+			<section class="section">
+				<div class="container">
+					<div class="columns">
+						<div class="column">
+							<div class="columns is-variable is-1 is-vcentered is-centered">
+								<div class="column is-narrow">
+									<label class="label">⏳︎ Minuteur</label>
+								</div>
+								<div class="column is-narrow">
+									<input id="timer-minutes" type="number" class="input" min="0" max="59" placeholder="minutes">
+								</div>
+								<div class="column is-narrow">
+									<input id="timer-seconds" type="number" class="input" min="0" max="59" placeholder="secondes">
+								</div>
+								<div class="column is-narrow">
+									<button id="timer-add" class="button is-success" type="button">Ajouter</button>
+								</div>
+							</div>
+							<div id="timers"></div>
+						</div>
+						<div class="column">
+							<div class="columns is-variable is-1 is-vcentered is-centered">
+								<div class="column is-narrow">
+									<label class="label">⏱︎ Chronomètre</label>
+								</div>
+								<div class="column is-narrow has-text-centered">
+									<span id="stopwatch">00:00</span>
+								</div>
+								<div class="column is-narrow">
+									<button id="stopwatch-toggle" class="button is-fullwidth has-text-link" type="button">▶</button>
+								</div>
+								<div class="column is-narrow">
+									<button id="stopwatch-reset" class="button is-fullwidth has-text-danger" type="button">■</button>
+								</div>
+								<div class="column is-narrow">
+									<button id="stopwatch-lap" class="button is-fullwidth has-text-success" type="button">Tour</button>
+								</div>
+							</div>
+							<div id="laps"></div>
+						</div>
+					</div>
+					<div class="columns">
+						<div class="column">
+							<div class="columns is-variable is-1 is-vcentered is-centered">
+								<div class="column is-narrow">
+									<label class="label">⌚ Horloge</label>
+								</div>
+								<div class="column is-narrow has-text-centered">
+									<span id="clock"></span>
+								</div>
+							</div>
+						</div>
+						<div class="column">
+							<div class="columns is-variable is-1 is-vcentered is-centered">
+								<div class="column is-narrow">
+									<label class="label">⏰ Alarme</label>
+								</div>
+								<div class="column is-narrow">
+									<input class="input" id="alarm-time" type="time">
+								</div>
+								<div class="column is-narrow">
+									<input class="input" id="alarm-message" type="text" placeholder="message">
+								</div>
+								<div class="column is-narrow">
+									<button id="alarm-add" class="button is-success" type="button">Ajouter</button>
+								</div>
+							</div>
+							<div id="alarms"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script src="classes/Timer.js"></script>
+		<script src="classes/Stopwatch.js"></script>
+		<script src="classes/Clock.js"></script>
+		<script src="classes/Alarm.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
